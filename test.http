@@ -1,0 +1,23 @@
+### List available API calls
+GET http://localhost:8080/
+
+### Random math fact
+GET http://localhost:8080/api/numbers
+host: localhost:8080
+
+### Most recent launches
+GET http://localhost:8080/api/spacex/launches
+host: localhost:8080
+
+### Details about a specific launch
+GET http://localhost:8080/api/spacex/launches/5eb87cd9ffd86e000604b32a
+host: localhost:8080
+
+### Get all rockets
+GET http://localhost:8080/api/spacex/rockets
+
+### Get a specific rocket
+GET http://localhost:8080/api/spacex/rockets/5e9d0d95eda69955f709d1eb
+
+### Get a random math fact
+GET http://localhost:8080/api/numbers/math/random
