@@ -1,11 +1,15 @@
 package com.example.spacexapi.controller;
 
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
 import com.example.spacexapi.model.Launch;
 import com.example.spacexapi.model.Rocket;
-import com.example.spacexapi.model.MathFact;
 import com.example.spacexapi.service.SpaceXService;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -37,10 +41,5 @@ public class SpaceXController {
     @GetMapping("/rockets/{id}")
     public ResponseEntity<Mono<Rocket>> getRocketById(@PathVariable String id) {
         return ResponseEntity.ok(spaceXService.getRocketById(id));
-    }
-
-    @GetMapping("/math/random")
-    public ResponseEntity<Mono<MathFact>> getRandomMathFact() {
-        return ResponseEntity.ok(spaceXService.getRandomMathFact());
     }
 } 

@@ -2,7 +2,6 @@ package com.example.spacexapi.service;
 
 import com.example.spacexapi.model.Launch;
 import com.example.spacexapi.model.Rocket;
-import com.example.spacexapi.model.MathFact;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Flux;
@@ -12,13 +11,9 @@ import reactor.core.publisher.Mono;
 public class SpaceXService {
 
     private final WebClient webClient;
-    private final WebClient numbersApiClient;
 
     public SpaceXService(WebClient webClient) {
         this.webClient = webClient;
-        this.numbersApiClient = WebClient.builder()
-                .baseUrl("http://numbersapi.com")
-                .build();
     }
 
     public Flux<Launch> getAllLaunches() {
@@ -47,12 +42,5 @@ public class SpaceXService {
                 .uri("/rockets/{id}", id)
                 .retrieve()
                 .bodyToMono(Rocket.class);
-    }
-
-    public Mono<MathFact> getRandomMathFact() {
-        return numbersApiClient.get()
-                .uri("/random/math?json")
-                .retrieve()
-                .bodyToMono(MathFact.class);
     }
 } 

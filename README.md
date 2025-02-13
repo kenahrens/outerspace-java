@@ -35,27 +35,32 @@ The application will start on port 8080.
 
 The following endpoints are available:
 
-1. Get all launches:
+1. Get API documentation:
+```
+GET http://localhost:8080/
+```
+
+2. Get all launches:
 ```
 GET http://localhost:8080/api/spacex/launches
 ```
 
-2. Get a specific launch by ID:
+3. Get a specific launch by ID:
 ```
 GET http://localhost:8080/api/spacex/launches/{id}
 ```
 
-3. Get all rockets:
+4. Get all rockets:
 ```
 GET http://localhost:8080/api/spacex/rockets
 ```
 
-4. Get a specific rocket by ID:
+5. Get a specific rocket by ID:
 ```
 GET http://localhost:8080/api/spacex/rockets/{id}
 ```
 
-5. Get a random math fact:
+6. Get a random math fact:
 ```
 GET http://localhost:8080/api/numbers/math/random
 ```
