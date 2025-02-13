@@ -1,9 +1,11 @@
-package com.example.spacexapi.service;
+package com.speedscale.outerspace.service;
 
-import com.example.spacexapi.model.Launch;
-import com.example.spacexapi.model.Rocket;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
+
+import com.speedscale.outerspace.model.Launch;
+import com.speedscale.outerspace.model.Rocket;
+
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 

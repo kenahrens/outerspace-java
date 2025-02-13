@@ -1,6 +1,6 @@
-package com.example.spacexapi.controller;
+package com.speedscale.outerspace.controller;
 
-import com.example.spacexapi.model.ApiEndpoint;
+import com.speedscale.outerspace.model.ApiEndpoint;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

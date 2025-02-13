@@ -1,7 +1,7 @@
-package com.example.spacexapi.service;
+package com.speedscale.outerspace.service;
 
-import com.example.spacexapi.model.Launch;
-import com.example.spacexapi.model.Rocket;
+import com.speedscale.outerspace.model.Launch;
+import com.speedscale.outerspace.model.Rocket;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

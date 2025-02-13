@@ -1,8 +1,10 @@
-package com.example.spacexapi.service;
+package com.speedscale.outerspace.service;
 
-import com.example.spacexapi.model.MathFact;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
+
+import com.speedscale.outerspace.model.MathFact;
+
 import reactor.core.publisher.Mono;
 
 @Service

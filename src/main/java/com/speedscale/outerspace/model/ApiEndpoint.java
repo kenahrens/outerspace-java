@@ -1,4 +1,4 @@
-package com.example.spacexapi.model;
+package com.speedscale.outerspace.model;
 
 import lombok.Builder;
 import lombok.Data;

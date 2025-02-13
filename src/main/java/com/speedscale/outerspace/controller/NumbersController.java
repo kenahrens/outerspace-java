@@ -1,12 +1,12 @@
-package com.example.spacexapi.controller;
+package com.speedscale.outerspace.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.spacexapi.model.MathFact;
-import com.example.spacexapi.service.NumbersService;
+import com.speedscale.outerspace.model.MathFact;
+import com.speedscale.outerspace.service.NumbersService;
 
 import reactor.core.publisher.Mono;
 

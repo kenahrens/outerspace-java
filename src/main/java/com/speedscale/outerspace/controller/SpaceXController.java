@@ -1,4 +1,4 @@
-package com.example.spacexapi.controller;
+package com.speedscale.outerspace.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.spacexapi.model.Launch;
-import com.example.spacexapi.model.Rocket;
-import com.example.spacexapi.service.SpaceXService;
+import com.speedscale.outerspace.model.Launch;
+import com.speedscale.outerspace.model.Rocket;
+import com.speedscale.outerspace.service.SpaceXService;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;

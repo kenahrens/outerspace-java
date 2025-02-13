@@ -1,6 +1,6 @@
-package com.example.spacexapi.service;
+package com.speedscale.outerspace.service;
 
-import com.example.spacexapi.model.MathFact;
+import com.speedscale.outerspace.model.MathFact;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

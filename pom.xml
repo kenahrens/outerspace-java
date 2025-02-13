@@ -9,8 +9,8 @@
         <relativePath/>
     </parent>
     
-    <groupId>com.example</groupId>
-    <artifactId>spacex-api</artifactId>
+    <groupId>com.speedscale</groupId>
+    <artifactId>outerspace</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>spacex-api</name>
     <description>Spring Boot SpaceX API Client</description>

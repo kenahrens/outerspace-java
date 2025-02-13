@@ -1,4 +1,4 @@
-package com.example.spacexapi;
+package com.speedscale.outerspace;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,10 +6,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.reactive.function.client.WebClient;
 
 @SpringBootApplication
-public class SpacexApiApplication {
+public class OuterspaceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpacexApiApplication.class, args);
+        SpringApplication.run(OuterspaceApplication.class, args);
     }
 
     @Bean
