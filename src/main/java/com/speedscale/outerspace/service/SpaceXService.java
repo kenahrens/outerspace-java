@@ -12,37 +12,37 @@ import reactor.core.publisher.Mono;
 @Service
 public class SpaceXService {
 
-    private final WebClient webClient;
+  private final WebClient webClient;
 
-    public SpaceXService(WebClient webClient) {
-        this.webClient = webClient;
-    }
+  public SpaceXService(WebClient webClient) {
+    this.webClient = webClient;
+  }
 
-    public Flux<Launch> getAllLaunches() {
-        return webClient.get()
-                .uri("/launches")
-                .retrieve()
-                .bodyToFlux(Launch.class);
-    }
+  public Flux<Launch> getAllLaunches() {
+    return webClient.get()
+      .uri("/launches")
+      .retrieve()
+      .bodyToFlux(Launch.class);
+  }
 
-    public Mono<Launch> getLaunchById(String id) {
-        return webClient.get()
-                .uri("/launches/{id}", id)
-                .retrieve()
-                .bodyToMono(Launch.class);
-    }
+  public Mono<Launch> getLaunchById(String id) {
+    return webClient.get()
+      .uri("/launches/{id}", id)
+      .retrieve()
+      .bodyToMono(Launch.class);
+  }
 
-    public Flux<Rocket> getAllRockets() {
-        return webClient.get()
-                .uri("/rockets")
-                .retrieve()
-                .bodyToFlux(Rocket.class);
-    }
+  public Flux<Rocket> getAllRockets() {
+    return webClient.get()
+      .uri("/rockets")
+      .retrieve()
+      .bodyToFlux(Rocket.class);
+  }
 
-    public Mono<Rocket> getRocketById(String id) {
-        return webClient.get()
-                .uri("/rockets/{id}", id)
-                .retrieve()
-                .bodyToMono(Rocket.class);
-    }
+  public Mono<Rocket> getRocketById(String id) {
+    return webClient.get()
+      .uri("/rockets/{id}", id)
+      .retrieve()
+      .bodyToMono(Rocket.class);
+  }
 } 

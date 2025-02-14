@@ -4,8 +4,8 @@ import lombok.Data;
 
 @Data
 public class MathFact {
-    private String text;
-    private Integer number;
-    private Boolean found;
-    private String type;
+  private String text;
+  private Integer number;
+  private Boolean found;
+  private String type;
 } 

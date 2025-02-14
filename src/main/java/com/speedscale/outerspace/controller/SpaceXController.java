@@ -17,29 +17,29 @@ import reactor.core.publisher.Mono;
 @RequestMapping("/api/spacex")
 public class SpaceXController {
 
-    private final SpaceXService spaceXService;
+  private final SpaceXService spaceXService;
 
-    public SpaceXController(SpaceXService spaceXService) {
-        this.spaceXService = spaceXService;
-    }
+  public SpaceXController(SpaceXService spaceXService) {
+    this.spaceXService = spaceXService;
+  }
 
-    @GetMapping("/launches")
-    public ResponseEntity<Flux<Launch>> getAllLaunches() {
-        return ResponseEntity.ok(spaceXService.getAllLaunches());
-    }
+  @GetMapping("/launches")
+  public ResponseEntity<Flux<Launch>> getAllLaunches() {
+    return ResponseEntity.ok(spaceXService.getAllLaunches());
+  }
 
-    @GetMapping("/launches/{id}")
-    public ResponseEntity<Mono<Launch>> getLaunchById(@PathVariable String id) {
-        return ResponseEntity.ok(spaceXService.getLaunchById(id));
-    }
+  @GetMapping("/launches/{id}")
+  public ResponseEntity<Mono<Launch>> getLaunchById(@PathVariable String id) {
+    return ResponseEntity.ok(spaceXService.getLaunchById(id));
+  }
 
-    @GetMapping("/rockets")
-    public ResponseEntity<Flux<Rocket>> getAllRockets() {
-        return ResponseEntity.ok(spaceXService.getAllRockets());
-    }
+  @GetMapping("/rockets")
+  public ResponseEntity<Flux<Rocket>> getAllRockets() {
+    return ResponseEntity.ok(spaceXService.getAllRockets());
+  }
 
-    @GetMapping("/rockets/{id}")
-    public ResponseEntity<Mono<Rocket>> getRocketById(@PathVariable String id) {
-        return ResponseEntity.ok(spaceXService.getRocketById(id));
-    }
+  @GetMapping("/rockets/{id}")
+  public ResponseEntity<Mono<Rocket>> getRocketById(@PathVariable String id) {
+    return ResponseEntity.ok(spaceXService.getRocketById(id));
+  }
 } 

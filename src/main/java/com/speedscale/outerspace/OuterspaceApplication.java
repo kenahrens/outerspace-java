@@ -8,14 +8,14 @@ import org.springframework.web.reactive.function.client.WebClient;
 @SpringBootApplication
 public class OuterspaceApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(OuterspaceApplication.class, args);
-    }
+  public static void main(String[] args) {
+  SpringApplication.run(OuterspaceApplication.class, args);
+  }
 
-    @Bean
-    public WebClient webClient() {
-        return WebClient.builder()
-                .baseUrl("https://api.spacexdata.com/v4")
-                .build();
-    }
+  @Bean
+  public WebClient webClient() {
+    return WebClient.builder()
+      .baseUrl("https://api.spacexdata.com/v4")
+      .build();
+  }
 } 

@@ -14,14 +14,14 @@ import reactor.core.publisher.Mono;
 @RequestMapping("/api/numbers")
 public class NumbersController {
 
-    private final NumbersService numbersService;
+  private final NumbersService numbersService;
 
-    public NumbersController(NumbersService numbersService) {
-        this.numbersService = numbersService;
-    }
+  public NumbersController(NumbersService numbersService) {
+    this.numbersService = numbersService;
+  }
 
-    @GetMapping("/math/random")
-    public ResponseEntity<Mono<MathFact>> getRandomMathFact() {
-        return ResponseEntity.ok(numbersService.getRandomMathFact());
-    }
+  @GetMapping("/math/random")
+  public ResponseEntity<Mono<MathFact>> getRandomMathFact() {
+  return ResponseEntity.ok(numbersService.getRandomMathFact());
+  }
 } 
