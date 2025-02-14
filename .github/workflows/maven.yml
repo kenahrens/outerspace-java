@@ -18,7 +18,7 @@ env:
   REGISTRY: ghcr.io
 
 jobs:
-  build-java:
+  build:
     runs-on: ubuntu-latest
     permissions:
       contents: write
