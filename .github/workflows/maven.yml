@@ -14,9 +14,11 @@ on:
   pull_request:
     branches: [ "main" ]
 
-jobs:
-  build:
+env:
+  REGISTRY: ghcr.io
 
+jobs:
+  build-java:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -43,6 +45,14 @@ jobs:
 
     - name: Update dependency graph
       uses: advanced-security/maven-dependency-submission-action@v4
+
+  build-container:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+      attestations: write
+      id-token: write
 
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v3
