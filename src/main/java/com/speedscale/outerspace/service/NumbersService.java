@@ -1,31 +1,24 @@
 package com.speedscale.outerspace.service;
 
 import org.springframework.stereotype.Service;
-import org.springframework.web.reactive.function.client.WebClient;
+import org.springframework.web.client.RestTemplate;
 
 import com.speedscale.outerspace.model.MathFact;
 
-import reactor.core.publisher.Mono;
-
 @Service
 public class NumbersService {
-  private final WebClient numbersApiClient;
+    private final RestTemplate restTemplate;
+    private final String baseUrl = "http://numbersapi.com";
 
-  public NumbersService() {
-    this(WebClient.builder()
-      .baseUrl("http://numbersapi.com")
-      .build());
-  }
+    public NumbersService() {
+        this(new RestTemplate());
+    }
 
-  // Constructor for testing
-  NumbersService(WebClient webClient) {
-    this.numbersApiClient = webClient;
-  }
+    NumbersService(RestTemplate restTemplate) {
+        this.restTemplate = restTemplate;
+    }
 
-  public Mono<MathFact> getRandomMathFact() {
-    return numbersApiClient.get()
-      .uri("/random/math?json")
-      .retrieve()
-      .bodyToMono(MathFact.class);
-  }
-} 
+    public MathFact getRandomMathFact() {
+        return restTemplate.getForObject(baseUrl + "/random/math?json", MathFact.class);
+    }
+}

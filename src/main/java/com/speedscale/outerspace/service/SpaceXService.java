@@ -1,48 +1,43 @@
 package com.speedscale.outerspace.service;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.springframework.stereotype.Service;
-import org.springframework.web.reactive.function.client.WebClient;
+import org.springframework.web.client.RestTemplate;
 
 import com.speedscale.outerspace.model.Launch;
 import com.speedscale.outerspace.model.Rocket;
 
-import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
-
 @Service
 public class SpaceXService {
 
-  private final WebClient webClient;
+    private final RestTemplate restTemplate;
+    private final String baseUrl = "https://api.spacexdata.com/v4";
 
-  public SpaceXService(WebClient webClient) {
-    this.webClient = webClient;
-  }
+    public SpaceXService() {
+        this(new RestTemplate());
+    }
 
-  public Flux<Launch> getAllLaunches() {
-    return webClient.get()
-      .uri("/launches")
-      .retrieve()
-      .bodyToFlux(Launch.class);
-  }
+    SpaceXService(RestTemplate restTemplate) {
+        this.restTemplate = restTemplate;
+    }
 
-  public Mono<Launch> getLaunchById(String id) {
-    return webClient.get()
-      .uri("/launches/{id}", id)
-      .retrieve()
-      .bodyToMono(Launch.class);
-  }
+    public List<Launch> getAllLaunches() {
+        Launch[] launches = restTemplate.getForObject(baseUrl + "/launches", Launch[].class);
+        return Arrays.asList(launches);
+    }
 
-  public Flux<Rocket> getAllRockets() {
-    return webClient.get()
-      .uri("/rockets")
-      .retrieve()
-      .bodyToFlux(Rocket.class);
-  }
+    public Launch getLaunchById(String id) {
+        return restTemplate.getForObject(baseUrl + "/launches/{id}", Launch.class, id);
+    }
 
-  public Mono<Rocket> getRocketById(String id) {
-    return webClient.get()
-      .uri("/rockets/{id}", id)
-      .retrieve()
-      .bodyToMono(Rocket.class);
-  }
+    public List<Rocket> getAllRockets() {
+        Rocket[] rockets = restTemplate.getForObject(baseUrl + "/rockets", Rocket[].class);
+        return Arrays.asList(rockets);
+    }
+
+    public Rocket getRocketById(String id) {
+        return restTemplate.getForObject(baseUrl + "/rockets/{id}", Rocket.class, id);
+    }
 } 

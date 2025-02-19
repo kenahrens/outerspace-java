@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.speedscale.outerspace.model.MathFact;
 import com.speedscale.outerspace.service.NumbersService;
 
-import reactor.core.publisher.Mono;
 
 @RestController
 @RequestMapping("/api/numbers")
@@ -21,7 +20,7 @@ public class NumbersController {
   }
 
   @GetMapping("/math/random")
-  public ResponseEntity<Mono<MathFact>> getRandomMathFact() {
-  return ResponseEntity.ok(numbersService.getRandomMathFact());
+    public ResponseEntity<MathFact> getRandomMathFact() {
+    return ResponseEntity.ok(numbersService.getRandomMathFact());
   }
 } 

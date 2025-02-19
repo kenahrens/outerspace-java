@@ -6,11 +6,9 @@ GET http://localhost:8080/api/numbers/math/random
 
 ### Most recent launches
 GET http://localhost:8080/api/spacex/launches
-host: localhost:8080
 
 ### Details about a specific launch
 GET http://localhost:8080/api/spacex/launches/5eb87cd9ffd86e000604b32a
-host: localhost:8080
 
 ### Get all rockets
 GET http://localhost:8080/api/spacex/rockets
