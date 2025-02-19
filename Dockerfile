@@ -2,8 +2,8 @@ FROM maven:3-amazoncorretto-20 AS build
 COPY ./ /usr/src/server
 WORKDIR /usr/src/server
 RUN mvn -q clean \
-    && mvn -q -DskipTests package \
-    && cp target/outerspace-*.jar /app.jar
+  && mvn -q -DskipTests package \
+  && cp target/outerspace-*.jar /app.jar
 
 FROM amazoncorretto:20
 
